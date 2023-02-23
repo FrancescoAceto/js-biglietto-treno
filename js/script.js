@@ -6,12 +6,24 @@ va applicato uno sconto del 40% per gli over 65.
 L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo).
 */
 
-let Numerokm;
+let NumeroKm = parseInt(prompt("Quanti km vuoi percorrere?"));
 
-let Età;
+let Età = parseInt(prompt("Quanti anni hai?"));
 
-let: Price;
+let PrezzoalKm = 0.21;
 
-Numerokm = prompt("Quanti km vuoi percorrere?")
+let PrezzoPartenza = (NumeroKm * PrezzoalKm);
 
-Età = prompt("Quanti anni hai?")
+console.log("Prezzo di base: " + PrezzoPartenza);
+
+let PrezzoFinale;
+
+if (Età < 18) {
+    PrezzoFinale = PrezzoPartenza - PrezzoPartenza / 100 * 20;
+    console.log("Prezzo Finale: " + PrezzoFinale.toFixed(2));
+}
+
+else if (Età > 65) {
+    PrezzoFinale = PrezzoPartenza - PrezzoPartenza / 100 * 40;
+    console.log("Prezzo Finale: " + PrezzoFinale.toFixed(2));
+}
